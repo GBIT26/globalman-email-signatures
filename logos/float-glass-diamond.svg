@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380" width="300" height="380">
-  <!-- Black chevron behind right side -->
-  <polygon points="180,30 290,120 290,180 235,180 235,140 180,78" fill="#1E293B"/>
+  <!-- Black chevron — single thick > arrow -->
+  <polygon points="145,55 290,120 145,185 145,145 230,120 145,95" fill="#1E293B"/>
   <!-- Navy blue diamond -->
   <g transform="translate(140,120) rotate(45)">
     <rect x="-85" y="-85" width="170" height="170" rx="6" fill="#47ABA9"/>
