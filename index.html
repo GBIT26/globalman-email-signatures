@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Man — Email Signature Kit 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --steel:#64748B;
+  --chrome:#94A3B8;
+  --forge:#1E293B;
+  --anvil:#0F172A;
+  --spark:#E8750A;
+  --glass:#ffffff;
+  --pane:#f7f6f3;
+  --gasket:#1a1a2e;
+
+  --brand-repairs:#C41E24;
+  --brand-hardware:#C5952A;
+  --brand-doors:#2563EB;
+  --brand-floatglass:#0D9488;
+
+  --ink-primary:rgba(255,255,255,0.92);
+  --ink-secondary:rgba(255,255,255,0.55);
+  --ink-tertiary:rgba(255,255,255,0.30);
+  --ink-muted:rgba(255,255,255,0.12);
+
+  --surface-raised:rgba(255,255,255,0.04);
+  --border-subtle:rgba(255,255,255,0.06);
+  --border-track:rgba(255,255,255,0.08);
+
+  --sp-2:2px;--sp-4:4px;--sp-8:8px;--sp-12:12px;--sp-16:16px;
+  --sp-20:20px;--sp-24:24px;--sp-32:32px;--sp-40:40px;--sp-48:48px;
+  --sp-56:56px;--sp-64:64px;--sp-72:72px;
+
+  --shadow-card:0 24px 64px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);
+  --shadow-hover:0 28px 72px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.25);
+
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --duration:220ms;
+}
+
+html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+body{
+  background:var(--anvil);
+  color:var(--ink-primary);
+  font-family:'Barlow',sans-serif;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+
+.wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 var(--sp-24)}
+
+.skip-link{
+  position:absolute;left:-9999px;top:var(--sp-8);
+  background:var(--spark);color:#fff;padding:var(--sp-8) var(--sp-16);
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;border-radius:2px;z-index:100;text-decoration:none;
+}
+.skip-link:focus{left:var(--sp-24)}
+
+.header{text-align:center;padding:var(--sp-72) 0 var(--sp-48)}
+.eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:4px;text-transform:uppercase;color:var(--chrome);
+  margin-bottom:var(--sp-20);opacity:0;animation:fadeUp .7s .1s var(--ease-out) forwards;
+}
+.title{
+  font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,5vw,48px);font-weight:800;
+  text-transform:uppercase;letter-spacing:-0.5px;line-height:1.05;color:var(--ink-primary);
+  margin-bottom:var(--sp-12);opacity:0;animation:fadeUp .7s .2s var(--ease-out) forwards;
+}
+.title span{color:var(--chrome)}
+.subtitle{
+  font-size:15px;font-weight:300;color:var(--ink-secondary);letter-spacing:0.3px;
+  opacity:0;animation:fadeUp .7s .3s var(--ease-out) forwards;
+}
+.track-line{
+  width:48px;height:2px;background:linear-gradient(90deg,var(--chrome),var(--steel));
+  margin:var(--sp-24) auto 0;border-radius:1px;
+  opacity:0;animation:fadeUp .7s .4s var(--ease-out) forwards;
+}
+
+/* ── Live input panel ── */
+.input-panel{
+  background:var(--surface-raised);border:1px solid var(--border-track);border-radius:8px;
+  padding:var(--sp-24) var(--sp-32);margin-bottom:var(--sp-48);
+  opacity:0;animation:fadeUp .7s .45s var(--ease-out) forwards;
+}
+.input-panel-header{display:flex;align-items:center;gap:var(--sp-12);margin-bottom:var(--sp-20)}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s ease-in-out infinite}
+.input-panel-label{
+  font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;color:var(--chrome);
+}
+.input-row{display:flex;gap:var(--sp-16);flex-wrap:wrap}
+.input-group{flex:1;min-width:180px}
+.input-group label{
+  display:block;font-size:11px;font-weight:500;letter-spacing:1px;
+  text-transform:uppercase;color:var(--ink-tertiary);margin-bottom:var(--sp-4);
+}
+.input-group input{
+  width:100%;background:rgba(0,0,0,0.3);border:1px solid var(--border-track);border-radius:4px;
+  padding:var(--sp-8) var(--sp-12);color:var(--ink-primary);font-family:'Barlow',sans-serif;font-size:14px;
+  transition:border-color var(--duration) var(--ease-out);
+}
+.input-group input:focus{outline:none;border-color:var(--chrome)}
+.input-group input::placeholder{color:var(--ink-tertiary)}
+
+/* ── Signature cards ── */
+.sig-card{
+  background:var(--surface-raised);border:1px solid var(--border-subtle);border-radius:12px;
+  margin-bottom:var(--sp-48);overflow:hidden;box-shadow:var(--shadow-card);
+  transition:box-shadow var(--duration) var(--ease-out),transform var(--duration) var(--ease-out);
+  opacity:0;animation:fadeUp .7s var(--ease-out) forwards;
+}
+.sig-card:nth-child(1){animation-delay:.5s}
+.sig-card:nth-child(2){animation-delay:.6s}
+.sig-card:nth-child(3){animation-delay:.7s}
+.sig-card:nth-child(4){animation-delay:.8s}
+.sig-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+
+.card-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:var(--sp-20) var(--sp-24);border-bottom:1px solid var(--border-subtle);
+}
+.card-badge{display:flex;align-items:center;gap:var(--sp-8)}
+.badge-num{
+  width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--steel),var(--chrome));border-radius:4px;
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#fff;
+}
+.badge-name{
+  font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:var(--ink-primary);
+}
+.badge-style{font-size:11px;font-weight:400;letter-spacing:0.5px;color:var(--ink-tertiary);margin-left:var(--sp-8);text-transform:none}
+
+.card-actions{display:flex;gap:var(--sp-8)}
+.btn{
+  font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;padding:var(--sp-8) var(--sp-16);
+  border-radius:4px;cursor:pointer;transition:all var(--duration) var(--ease-out);border:none;
+}
+.btn-copy{background:linear-gradient(135deg,var(--steel),var(--chrome));color:#fff}
+.btn-copy:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.btn-copy.copied{background:#22c55e}
+.btn-code{background:transparent;border:1px solid var(--border-track);color:var(--ink-secondary)}
+.btn-code:hover{border-color:var(--chrome);color:var(--ink-primary)}
+
+.sig-preview{padding:var(--sp-32);background:var(--pane)}
+.code-panel{display:none;background:var(--gasket);padding:var(--sp-24);border-top:2px solid var(--steel);max-height:320px;overflow-y:auto}
+.code-panel.open{display:block}
+.code-panel pre{margin:0;font-size:12px;line-height:1.6;color:var(--ink-secondary);white-space:pre-wrap;word-break:break-all;font-family:'SF Mono','Fira Code',monospace}
+
+.instructions{
+  background:var(--surface-raised);border:1px solid var(--border-subtle);border-radius:12px;
+  padding:var(--sp-32);margin-bottom:var(--sp-48);
+  opacity:0;animation:fadeUp .7s .9s var(--ease-out) forwards;
+}
+.instructions h2{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;color:var(--ink-primary);margin-bottom:var(--sp-24);
+}
+.instructions h3{
+  font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--chrome);margin:var(--sp-20) 0 var(--sp-8);
+}
+.instructions ol{padding-left:var(--sp-24);color:var(--ink-secondary);font-size:14px;line-height:1.8}
+.instructions code{background:rgba(148,163,184,0.15);padding:2px 6px;border-radius:3px;font-size:12px;color:var(--chrome)}
+
+.footer{text-align:center;padding:var(--sp-48) 0 var(--sp-72);border-top:1px solid var(--border-subtle);opacity:0;animation:fadeUp .7s 1s var(--ease-out) forwards}
+.footer p{font-size:12px;color:var(--ink-tertiary);letter-spacing:0.5px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+@media(max-width:600px){
+  .input-row{flex-direction:column}
+  .card-header{flex-direction:column;align-items:flex-start;gap:var(--sp-12)}
+  .sig-preview{padding:var(--sp-16)}
+}
+</style>
+</head>
+<body>
+<a href="#signatures" class="skip-link">Skip to signatures</a>
+<div class="wrap">
+
+  <header class="header">
+    <p class="eyebrow">Signature Kit</p>
+    <h1 class="title">Global <span>Man</span></h1>
+    <p class="subtitle">Professional email signatures &mdash; 2026</p>
+    <div class="track-line"></div>
+  </header>
+
+  <div class="input-panel">
+    <div class="input-panel-header">
+      <div class="live-dot"></div>
+      <span class="input-panel-label">Live Details</span>
+    </div>
+    <div class="input-row">
+      <div class="input-group">
+        <label for="fieldName">Full Name</label>
+        <input type="text" id="fieldName" placeholder="Your Name" />
+      </div>
+      <div class="input-group">
+        <label for="fieldTitle">Title</label>
+        <input type="text" id="fieldTitle" placeholder="Your Title" />
+      </div>
+      <div class="input-group">
+        <label for="fieldEmail">Email</label>
+        <input type="email" id="fieldEmail" placeholder="you@globalman.com.au" />
+      </div>
+    </div>
+  </div>
+
+  <div id="signatures">
+
+  <!-- ═══════════════════════════════════════════════
+       SIGNATURE 01 — IRONWORK
+       Chrome pillar + diamond distributor strip
+       ═══════════════════════════════════════════════ -->
+  <div class="sig-card">
+    <div class="card-header">
+      <div class="card-badge">
+        <div class="badge-num">01</div>
+        <span class="badge-name">Ironwork<span class="badge-style">— chrome pillar, diamond strip</span></span>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-copy" onclick="copySig('sig1')" aria-label="Copy signature HTML">Copy HTML</button>
+        <button class="btn btn-code" onclick="toggleCode('code1')" aria-label="Toggle HTML code">Show HTML</button>
+      </div>
+    </div>
+    <div class="sig-preview">
+      <div id="sig1">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#334155;max-width:600px;border-collapse:collapse;">
+  <tr>
+    <td style="padding:0 0 16px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+        <tr>
+          <td style="vertical-align:middle;padding-right:16px;">
+            <img src="https://globalman-email-signatures.vercel.app/logos/globalman.png" width="200" height="auto" alt="Global Man" style="display:block;border:0;outline:none;" />
+          </td>
+          <td style="width:5px;background:linear-gradient(180deg,#64748B,#94A3B8);border-radius:2px;font-size:0;line-height:0;" width="5">&nbsp;</td>
+          <td style="width:3px;" width="3">&nbsp;</td>
+          <td style="width:2px;background:#E8750A;border-radius:1px;font-size:0;line-height:0;" width="2">&nbsp;</td>
+          <td style="padding-left:16px;vertical-align:middle;">
+            <div class="live-name" style="font-size:20px;font-weight:bold;color:#1E293B;letter-spacing:-0.3px;line-height:1.2;text-transform:uppercase;">[Your Name]</div>
+            <div class="live-title" style="font-size:13px;font-weight:600;color:#64748B;letter-spacing:1px;text-transform:uppercase;margin-top:2px;">[Your Title]</div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td style="padding:0;height:1px;background:#E2E8F0;font-size:0;line-height:0;">&nbsp;</td></tr>
+  <tr>
+    <td style="padding:12px 0 0 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-size:12px;color:#64748B;">
+        <tr>
+          <td style="padding-right:16px;"><span style="font-weight:700;color:#1E293B;font-size:10px;letter-spacing:1px;">E</span>&nbsp;<a href="mailto:you@globalman.com.au" class="live-email-link" style="color:#64748B;text-decoration:none;"><span class="live-email">[youremail@globalman.com.au]</span></a></td>
+          <td><span style="font-weight:700;color:#1E293B;font-size:10px;letter-spacing:1px;">W</span>&nbsp;<a href="https://globalman.com.au" style="color:#64748B;text-decoration:none;">globalman.com.au</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td style="padding:0;height:1px;background:#E2E8F0;font-size:0;line-height:0;">&nbsp;</td></tr>
+  <!-- Accredited Distributors -->
+  <tr>
+    <td style="padding:14px 0 0 0;">
+      <div style="font-size:9px;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:2.5px;padding-bottom:14px;">Accredited Distributors</div>
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" style="border-collapse:collapse;table-layout:fixed;">
+        <col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/>
+        <!-- Row 1: Logos -->
+        <tr>
+          <td align="center" valign="bottom" style="height:80px;padding:0;">
+            <a href="https://slidemasteraust.com.au" style="text-decoration:none;"><img src="https://globalman-email-signatures.vercel.app/logos/sm-repairs.png" width="64" height="auto" alt="SM Repairs" style="border:0;" /></a>
+          </td>
+          <td align="center" valign="bottom" style="height:80px;padding:0;">
+            <a href="https://slidemasterhardware.com" style="text-decoration:none;"><img src="https://globalman-email-signatures.vercel.app/logos/sm-hardware-charcoal.png" width="64" height="auto" alt="SM Hardware" style="border:0;" /></a>
+          </td>
+          <td align="center" valign="bottom" style="height:80px;padding:0;">
+            <a href="https://slidemasterhardware.com/product-category/door-windows/" style="text-decoration:none;"><img src="https://globalman-email-signatures.vercel.app/logos/sm-doors.png" width="64" height="auto" alt="Doors &amp; Windows" style="border:0;" /></a>
+          </td>
+          <td align="center" valign="bottom" style="height:80px;padding:0;">
+            <a href="https://slidemasterhardware.com/product-category/hardware-store/glass-cutting-tools-hardware/" style="text-decoration:none;"><img src="https://globalman-email-signatures.vercel.app/logos/float-glass-diamond.png" width="64" height="auto" alt="Float Glass Australia" style="border:0;" /></a>
+          </td>
+        </tr>
+        <!-- Row 2: Labels -->
+        <tr>
+          <td align="center" valign="top" style="padding:8px 4px 0 4px;">
+            <a href="https://slidemasteraust.com.au" style="text-decoration:none;">
+              <div style="font-size:9px;font-weight:700;color:#C41E24;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Repairs</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">0435 806 520</div>
+            </a>
+          </td>
+          <td align="center" valign="top" style="padding:8px 4px 0 4px;">
+            <a href="https://slidemasterhardware.com" style="text-decoration:none;">
+              <div style="font-size:9px;font-weight:700;color:#C5952A;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Online Store</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+          <td align="center" valign="top" style="padding:8px 4px 0 4px;">
+            <a href="https://slidemasterhardware.com/product-category/door-windows/" style="text-decoration:none;">
+              <div style="font-size:9px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.3px;line-height:1.3;white-space:nowrap;">Doors &amp; Windows</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+          <td align="center" valign="top" style="padding:8px 4px 0 4px;">
+            <a href="https://slidemasterhardware.com/product-category/hardware-store/glass-cutting-tools-hardware/" style="text-decoration:none;">
+              <div style="font-size:9px;font-weight:700;color:#47ABA9;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Glass Tools</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+    <div id="code1" class="code-panel"><pre></pre></div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SIGNATURE 02 — WORKSHOP
+       Dark banner header + diamond distributor strip
+       ═══════════════════════════════════════════════ -->
+  <div class="sig-card">
+    <div class="card-header">
+      <div class="card-badge">
+        <div class="badge-num">02</div>
+        <span class="badge-name">Workshop<span class="badge-style">— dark banner, diamond strip</span></span>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-copy" onclick="copySig('sig2')" aria-label="Copy signature HTML">Copy HTML</button>
+        <button class="btn btn-code" onclick="toggleCode('code2')" aria-label="Toggle HTML code">Show HTML</button>
+      </div>
+    </div>
+    <div class="sig-preview">
+      <div id="sig2">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#334155;max-width:600px;border-collapse:collapse;">
+  <tr>
+    <td style="background:#1E293B;padding:18px 22px;border-radius:4px 4px 0 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="vertical-align:middle;">
+            <div class="live-name" style="font-size:20px;font-weight:bold;color:#FFFFFF;letter-spacing:-0.2px;line-height:1.2;">[Your Name]</div>
+            <div class="live-title" style="font-size:11px;font-weight:600;color:#94A3B8;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;">[Your Title]</div>
+          </td>
+          <td style="vertical-align:middle;text-align:right;">
+            <img src="https://globalman-email-signatures.vercel.app/logos/globalman.png" width="160" height="auto" alt="Global Man" style="display:block;border:0;outline:none;" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="background:#F8FAFC;padding:12px 22px;border-left:1px solid #E2E8F0;border-right:1px solid #E2E8F0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-size:12px;color:#64748B;width:100%;">
+        <tr>
+          <td style="padding-right:20px;"><a href="mailto:you@globalman.com.au" class="live-email-link" style="color:#64748B;text-decoration:none;"><span class="live-email">[youremail@globalman.com.au]</span></a></td>
+          <td><a href="https://globalman.com.au" style="color:#64748B;text-decoration:none;font-weight:600;">globalman.com.au</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="background:#F8FAFC;padding:0 22px;border-left:1px solid #E2E8F0;border-right:1px solid #E2E8F0;"><div style="height:1px;background:#E2E8F0;"></div></td>
+  </tr>
+  <tr>
+    <td style="background:#F8FAFC;padding:14px 22px 18px 22px;border-left:1px solid #E2E8F0;border-right:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;border-radius:0 0 4px 4px;">
+      <div style="font-size:9px;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:2.5px;padding-bottom:14px;">Accredited Distributors</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasteraust.com.au" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-repairs.png" width="64" height="80" alt="SM Repairs" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#C41E24;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Repairs</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">0435 806 520</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-hardware-charcoal.png" width="64" height="80" alt="SM Hardware" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#C5952A;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Online Store</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com/product-category/door-windows/" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-doors.png" width="64" height="80" alt="Doors &amp; Windows" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:8px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.3px;line-height:1.3;white-space:nowrap;">Doors &amp; Windows</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com/product-category/hardware-store/glass-cutting-tools-hardware/" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/float-glass-diamond.png" width="64" height="80" alt="Float Glass Australia" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#47ABA9;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Glass Tools</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+    <div id="code2" class="code-panel"><pre></pre></div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SIGNATURE 03 — ARCHITECT
+       Two-column serif split + diamond strip
+       ═══════════════════════════════════════════════ -->
+  <div class="sig-card">
+    <div class="card-header">
+      <div class="card-badge">
+        <div class="badge-num">03</div>
+        <span class="badge-name">Architect<span class="badge-style">— two-column, refined</span></span>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-copy" onclick="copySig('sig3')" aria-label="Copy signature HTML">Copy HTML</button>
+        <button class="btn btn-code" onclick="toggleCode('code3')" aria-label="Toggle HTML code">Show HTML</button>
+      </div>
+    </div>
+    <div class="sig-preview">
+      <div id="sig3">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#334155;max-width:600px;border-collapse:collapse;">
+  <tr>
+    <td style="padding:0 0 14px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="vertical-align:top;width:55%;">
+            <div class="live-name" style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:normal;color:#1E293B;line-height:1.15;letter-spacing:-0.5px;">[Your Name]</div>
+            <div class="live-title" style="font-size:11px;font-weight:600;color:#94A3B8;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;">[Your Title]</div>
+          </td>
+          <td style="vertical-align:top;text-align:right;">
+            <img src="https://globalman-email-signatures.vercel.app/logos/globalman.png" width="160" height="auto" alt="Global Man" style="display:block;border:0;outline:none;margin-left:auto;" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td style="padding:0;height:2px;font-size:0;line-height:0;"><div style="height:1px;background:#64748B;"></div><div style="height:1px;background:#E2E8F0;"></div></td></tr>
+  <tr>
+    <td style="padding:12px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-size:12px;color:#64748B;width:100%;">
+        <tr>
+          <td style="vertical-align:top;width:55%;">
+            <div style="margin-bottom:4px;"><span style="font-weight:700;color:#1E293B;font-size:10px;letter-spacing:1px;display:inline-block;width:14px;">E</span> <a href="mailto:you@globalman.com.au" class="live-email-link" style="color:#64748B;text-decoration:none;"><span class="live-email">[youremail@globalman.com.au]</span></a></div>
+          </td>
+          <td style="vertical-align:top;text-align:right;font-size:11px;">
+            <div><a href="https://globalman.com.au" style="color:#64748B;text-decoration:none;font-weight:600;">globalman.com.au</a></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td style="padding:0;height:1px;background:#E2E8F0;font-size:0;line-height:0;">&nbsp;</td></tr>
+  <tr>
+    <td style="padding:14px 0 0 0;">
+      <div style="font-size:9px;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:2.5px;padding-bottom:14px;">Accredited Distributors</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasteraust.com.au" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-repairs.png" width="64" height="80" alt="SM Repairs" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#C41E24;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Repairs</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">0435 806 520</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-hardware-charcoal.png" width="64" height="80" alt="SM Hardware" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#C5952A;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Online Store</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com/product-category/door-windows/" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-doors.png" width="64" height="80" alt="Doors &amp; Windows" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:8px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.3px;line-height:1.3;white-space:nowrap;">Doors &amp; Windows</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com/product-category/hardware-store/glass-cutting-tools-hardware/" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/float-glass-diamond.png" width="64" height="80" alt="Float Glass Australia" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#47ABA9;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Glass Tools</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+    <div id="code3" class="code-panel"><pre></pre></div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SIGNATURE 04 — PRECISION
+       Minimal, calibration accent, diamond strip
+       ═══════════════════════════════════════════════ -->
+  <div class="sig-card">
+    <div class="card-header">
+      <div class="card-badge">
+        <div class="badge-num">04</div>
+        <span class="badge-name">Precision<span class="badge-style">— minimal, calibration accent</span></span>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-copy" onclick="copySig('sig4')" aria-label="Copy signature HTML">Copy HTML</button>
+        <button class="btn btn-code" onclick="toggleCode('code4')" aria-label="Toggle HTML code">Show HTML</button>
+      </div>
+    </div>
+    <div class="sig-preview">
+      <div id="sig4">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#334155;max-width:600px;border-collapse:collapse;">
+  <tr>
+    <td style="padding:0 0 12px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="vertical-align:middle;">
+            <div class="live-name" style="font-family:Georgia,'Times New Roman',serif;font-size:20px;font-style:italic;font-weight:normal;color:#1E293B;line-height:1.2;">[Your Name]</div>
+            <div class="live-title" style="font-size:11px;font-weight:500;color:#94A3B8;letter-spacing:0.5px;margin-top:2px;">[Your Title]</div>
+          </td>
+          <td style="vertical-align:middle;text-align:right;">
+            <img src="https://globalman-email-signatures.vercel.app/logos/globalman.png" width="140" height="auto" alt="Global Man" style="display:block;border:0;outline:none;margin-left:auto;" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td style="padding:0;height:1px;font-size:0;line-height:0;"><table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;"><tr><td style="width:40px;height:1px;background:#64748B;font-size:0;">&nbsp;</td><td style="width:4px;font-size:0;">&nbsp;</td><td style="width:8px;height:1px;background:#E8750A;font-size:0;">&nbsp;</td><td style="height:1px;background:#E2E8F0;font-size:0;">&nbsp;</td></tr></table></td></tr>
+  <tr>
+    <td style="padding:10px 0 14px 0;font-size:12px;color:#64748B;">
+      <a href="mailto:you@globalman.com.au" class="live-email-link" style="color:#64748B;text-decoration:none;"><span class="live-email">[youremail@globalman.com.au]</span></a>
+      <span style="color:#CBD5E1;margin:0 6px;">&middot;</span>
+      <a href="https://globalman.com.au" style="color:#64748B;text-decoration:none;font-weight:600;">globalman.com.au</a>
+    </td>
+  </tr>
+  <tr><td style="padding:0;height:1px;background:#E2E8F0;font-size:0;line-height:0;">&nbsp;</td></tr>
+  <tr>
+    <td style="padding:14px 0 0 0;">
+      <div style="font-size:9px;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:2.5px;padding-bottom:14px;">Accredited Distributors</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasteraust.com.au" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-repairs.png" width="64" height="80" alt="SM Repairs" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#C41E24;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Repairs</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">0435 806 520</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-hardware-charcoal.png" width="64" height="80" alt="SM Hardware" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#C5952A;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Online Store</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com/product-category/door-windows/" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/sm-doors.png" width="64" height="80" alt="Doors &amp; Windows" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:8px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.3px;line-height:1.3;white-space:nowrap;">Doors &amp; Windows</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+          <td style="text-align:center;width:25%;padding:0 6px;vertical-align:top;">
+            <a href="https://slidemasterhardware.com/product-category/hardware-store/glass-cutting-tools-hardware/" style="text-decoration:none;display:inline-block;">
+              <img src="https://globalman-email-signatures.vercel.app/logos/float-glass-diamond.png" width="64" height="80" alt="Float Glass Australia" style="display:block;border:0;margin:0 auto 6px auto;object-fit:contain;" />
+              <div style="font-size:9px;font-weight:700;color:#47ABA9;text-transform:uppercase;letter-spacing:0.5px;line-height:1.3;">Glass Tools</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:1px;">08 6401 3333</div>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+      </div>
+    </div>
+    <div id="code4" class="code-panel"><pre></pre></div>
+  </div>
+
+  </div>
+
+  <div class="instructions">
+    <h2>Setup Instructions</h2>
+    <h3>Gmail</h3>
+    <ol>
+      <li>Click <strong>Copy HTML</strong> on your chosen design</li>
+      <li>Open Gmail &rarr; Settings (gear) &rarr; <strong>See all settings</strong></li>
+      <li>Scroll to <strong>Signature</strong> &rarr; <strong>Create new</strong></li>
+      <li>Click the editor, press <code>Ctrl+A</code> then <code>Ctrl+V</code> (Mac: <code>Cmd+V</code>)</li>
+      <li>Scroll down &rarr; <strong>Save Changes</strong></li>
+    </ol>
+    <h3>Outlook (Desktop &amp; Web)</h3>
+    <ol>
+      <li>Click <strong>Copy HTML</strong></li>
+      <li>Outlook &rarr; <strong>Settings</strong> &rarr; <strong>Mail</strong> &rarr; <strong>Compose and reply</strong></li>
+      <li>Under <strong>Email signature</strong>, click <strong>New signature</strong></li>
+      <li>Paste with <code>Ctrl+V</code> / <code>Cmd+V</code></li>
+      <li>Set as default &rarr; <strong>Save</strong></li>
+    </ol>
+    <h3>Apple Mail</h3>
+    <ol>
+      <li>Click <strong>Copy HTML</strong></li>
+      <li>Apple Mail &rarr; <strong>Settings</strong> &rarr; <strong>Signatures</strong></li>
+      <li>Click <strong>+</strong> to create new</li>
+      <li>Paste with <code>Cmd+V</code></li>
+      <li>Assign to your account</li>
+    </ol>
+    <h3>Thunderbird</h3>
+    <ol>
+      <li>Click <strong>Show HTML</strong>, then copy all code</li>
+      <li>Thunderbird &rarr; <strong>Account Settings</strong></li>
+      <li>Check <strong>Use HTML</strong> and paste into the signature box</li>
+      <li>Click <strong>OK</strong></li>
+    </ol>
+  </div>
+
+  <footer class="footer">
+    <p>Global Man &mdash; Email Signature Kit &copy; 2026</p>
+  </footer>
+
+</div>
+
+<script>
+const nameInput = document.getElementById('fieldName');
+const titleInput = document.getElementById('fieldTitle');
+const emailInput = document.getElementById('fieldEmail');
+
+function updateLive() {
+  const n = nameInput.value || '[Your Name]';
+  const t = titleInput.value || '[Your Title]';
+  const e = emailInput.value || '[youremail@globalman.com.au]';
+  document.querySelectorAll('.live-name').forEach(el => el.textContent = n);
+  document.querySelectorAll('.live-title').forEach(el => el.textContent = t);
+  document.querySelectorAll('.live-email').forEach(el => el.textContent = e);
+  document.querySelectorAll('.live-email-link').forEach(el => {
+    if (emailInput.value) el.href = 'mailto:' + e;
+  });
+}
+
+nameInput.addEventListener('input', updateLive);
+titleInput.addEventListener('input', updateLive);
+emailInput.addEventListener('input', updateLive);
+
+function copySig(id) {
+  const el = document.getElementById(id);
+  const clone = el.cloneNode(true);
+  clone.querySelectorAll('[class]').forEach(node => {
+    if (node.className && node.className.includes && node.className.includes('live-')) node.removeAttribute('class');
+  });
+  const html = clone.innerHTML.trim();
+  navigator.clipboard.writeText(html).then(() => {
+    const btn = event.currentTarget;
+    btn.textContent = 'Copied';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy HTML'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function toggleCode(id) {
+  const panel = document.getElementById(id);
+  const isOpen = panel.classList.toggle('open');
+  const btn = event.currentTarget;
+  btn.textContent = isOpen ? 'Hide HTML' : 'Show HTML';
+  if (isOpen) {
+    const sigId = id.replace('code', 'sig');
+    panel.querySelector('pre').textContent = document.getElementById(sigId).innerHTML.trim();
+  }
+}
+</script>
+</body>
+</html>

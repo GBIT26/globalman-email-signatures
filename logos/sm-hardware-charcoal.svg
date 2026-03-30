@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380" width="300" height="380">
+  <!-- Gold diamond -->
+  <g transform="translate(150,120) rotate(45)">
+    <rect x="-80" y="-80" width="160" height="160" rx="6" fill="#C5952A"/>
+  </g>
+  <!-- SM text -->
+  <text x="150" y="125" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="bold" fill="#000000">SM</text>
+  <!-- (AUST) -->
+  <text x="150" y="155" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#000000" letter-spacing="0">(AUST)</text>
+  <!-- SLIDE MASTER (AUST) on one line in charcoal -->
+  <text x="150" y="275" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#334155" letter-spacing="0">SLIDE MASTER (AUST)</text>
+  <!-- Gold line -->
+  <rect x="50" y="288" width="200" height="2.5" fill="#C5952A"/>
+  <!-- HARDWARE -->
+  <text x="150" y="320" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#C5952A" letter-spacing="0">HARDWARE</text>
+</svg>
