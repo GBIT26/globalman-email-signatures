@@ -7,10 +7,10 @@
   <text x="150" y="125" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="bold" fill="#000000">SM</text>
   <!-- (AUST) -->
   <text x="150" y="155" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#000000" letter-spacing="0">(AUST)</text>
-  <!-- SLIDE MASTER (AUST) on one line in charcoal -->
-  <text x="150" y="275" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="bold" fill="#334155" letter-spacing="0">SLIDE MASTER (AUST)</text>
+  <!-- SLIDE MASTER (AUST) -->
+  <text x="150" y="280" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#334155" letter-spacing="0">SLIDE MASTER (AUST)</text>
   <!-- Gold line -->
-  <rect x="50" y="288" width="200" height="2.5" fill="#C5952A"/>
+  <rect x="30" y="295" width="240" height="3" fill="#C5952A"/>
   <!-- HARDWARE -->
-  <text x="150" y="320" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" fill="#C5952A" letter-spacing="0">HARDWARE</text>
+  <text x="150" y="335" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="bold" fill="#C5952A" letter-spacing="0">HARDWARE</text>
 </svg>
