@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380" width="300" height="380">
-  <!-- Black chevron — single thick > arrow -->
-  <polygon points="150,55 295,120 150,185 150,145 235,120 150,95" fill="#1E293B"/>
+  <!-- Black chevron — thick > behind diamond, only right side visible -->
+  <polygon points="160,40 300,90 300,60" fill="#1E293B"/>
+  <polygon points="160,60 300,105 300,135 160,180" fill="#1E293B"/>
+  <polygon points="160,200 300,155 300,180" fill="#1E293B"/>
   <!-- Gold diamond -->
   <g transform="translate(150,120) rotate(45)">
     <rect x="-80" y="-80" width="160" height="160" rx="6" fill="#C5952A"/>
